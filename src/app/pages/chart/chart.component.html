@@ -1,0 +1,51 @@
+<dx-chart id="chartcontainer"
+    [dataSource]="chartdata"
+    title="Moyenne du reserve 2020/2021"
+    palette="Harmony Light"
+   
+    >    
+     <dxi-series valueField="year2020" name="2020"></dxi-series> 
+     <dxi-series valueField="year2021" name="2021"></dxi-series> 
+    <!-- <dxi-series *ngFor="let yr of year" [valueField]="'year' + yr" [name]="yr">{{yr}}</dxi-series>-->
+    <dxo-common-series-settings
+        argumentField="name"
+        type="bar"
+        hoverMode="allArgumentPoints"
+        selectionMode="allArgumentPoints">
+        <dxo-label
+            [visible]="true"
+            [format]="{ 
+                type: 'fixedPoint', 
+                precision: '0'
+            }">
+        </dxo-label>
+    </dxo-common-series-settings>
+    <dxo-legend
+        verticalAlignment="bottom" 
+        horizontalAlignment="center">
+    </dxo-legend>
+
+    <dxo-loading-indicator [enabled]="true"></dxo-loading-indicator>
+    <dxo-common-pane-settings>
+        <dxo-border
+            [visible]="true"
+            [width]="2"
+            [top]="false"
+            [right]="false"
+        ></dxo-border>
+    </dxo-common-pane-settings>
+
+</dx-chart>
+<div class="action">
+    <dx-select-box
+        id="choose-date"
+        [dataSource]="monthData"
+        [width]="200"    
+        valueExpr="month"
+        displayExpr="month"          
+        (onValueChanged)="onValueChanged($event)"
+    ></dx-select-box>
+    <div class="label">select a month :
+    </div>  
+</div>
+
