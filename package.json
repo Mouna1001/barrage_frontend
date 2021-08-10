@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "build-themes": "devextreme build",
     "postinstall": "npm run build-themes",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
