@@ -3,7 +3,7 @@
         <div class="m-3 panel panel-default card-body">
 
             <div class="form-group col-md-6">
-                <label>Name</label>
+                <label>Nom du barrage</label>
                 <select [(ngModel)]="payload.Name" [ngModelOptions]="{standalone: true}" class="form-select" type="text" aria-label="Default select example">
                     <option [ngValue]="'Al Wahda'">Al Wahda</option>
                     <option [ngValue]="'Al Hanssali'">Al Hanssali</option>
@@ -23,10 +23,10 @@
             <div class="form-group col-md-6">
                 <label>Reserve</label>
                 <input [(ngModel)]="payload.Reserve" [ngModelOptions]="{standalone: true}" type="number"
-                    class="form-control" placeholder="Enter Reserve">
+                    class="form-control" placeholder="Entrer le Reserve">
             </div>
             <div class="form-group col-md-6">
-                <label>Day Name</label>
+                <label>Jour</label>
                 <select  [(ngModel)]="payload.day_name" [ngModelOptions]="{standalone: true}" class="form-select" aria-label="Default select example">
                     <option [ngValue]="'Monday'">Lundi</option>
                     <option [ngValue]="'Tuesday'">Mardi</option>
@@ -39,7 +39,7 @@
                
             </div>
             <div class="form-group col-md-6">
-                <label>Month Name</label>
+                <label>Mois</label>
                 <select  [(ngModel)]="payload.month_name"  [ngModelOptions]="{standalone: true}" class="form-select" aria-label="Default select example">
                     <option [ngValue]="'January'">Janvier</option>
                     <option [ngValue]="'February'">Février</option>
@@ -57,9 +57,9 @@
               
             </div>
             <div class="form-group col-md-6">
-                <label>Year</label>
+                <label>Année</label>
                 <input [(ngModel)]="payload.Year" [ngModelOptions]="{standalone: true}" type="number" class="form-control"
-                    placeholder="Enter Year">
+                    placeholder="Entrer une année">
             </div>
             <div class="col-md-6 m-2 d-flex justify-content-end">
                 <button  type="submit" (click)="submitClickHandler()"

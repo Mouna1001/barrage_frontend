@@ -1,30 +1,31 @@
 <dx-chart id="chartcontainer"
     [dataSource]="chartdata"
-    title="Moyenne du reserve 2020/2021"
-    palette="Harmony Light"
-   
+    title="Moyenne du reserve 2021"
+
     >    
-     <dxi-series valueField="year2020" name="2020"></dxi-series> 
-     <dxi-series valueField="year2021" name="2021"></dxi-series> 
-    <!-- <dxi-series *ngFor="let yr of year" [valueField]="'year' + yr" [name]="yr">{{yr}}</dxi-series>-->
+    <dxi-series valueField="reserve" name="2021" color="#8c8cff"></dxi-series> 
+    <!-- <dxi-series valueField="year2021" name="2021"></dxi-series> -->
     <dxo-common-series-settings
         argumentField="name"
-        type="bar"
+        type="bar" 
         hoverMode="allArgumentPoints"
+        [barPadding]="0.3"
+        [ignoreEmptyPoints]="true"
         selectionMode="allArgumentPoints">
-        <dxo-label
+        <dxo-label 
             [visible]="true"
-            [format]="{ 
-                type: 'fixedPoint', 
+            [format]="{
+                type: 'fixedPoint',
                 precision: '0'
-            }">
-        </dxo-label>
+            }"
+           >
+        </dxo-label> 
     </dxo-common-series-settings>
     <dxo-legend
-        verticalAlignment="bottom" 
+        verticalAlignment="bottom"
         horizontalAlignment="center">
     </dxo-legend>
-
+  
     <dxo-loading-indicator [enabled]="true"></dxo-loading-indicator>
     <dxo-common-pane-settings>
         <dxo-border
@@ -32,20 +33,25 @@
             [width]="2"
             [top]="false"
             [right]="false"
-        ></dxo-border>
+        ></dxo-border> 
     </dxo-common-pane-settings>
 
 </dx-chart>
 <div class="action">
-    <dx-select-box
+
+    <dx-select-box 
         id="choose-date"
-        [dataSource]="monthData"
-        [width]="200"    
-        valueExpr="month"
-        displayExpr="month"          
-        (onValueChanged)="onValueChanged($event)"
+        [items]="months"
+        (onValueChanged) ="onMonthChanged($event)" 
+        [width]="200"   
+        valueExpr="id" 
+        displayExpr="name"       
+        
     ></dx-select-box>
-    <div class="label">select a month :
-    </div>  
-</div>
+
+    <div class="label">Sélectionner un mois:
+    </div>
+</div> 
+
+
 

@@ -62,7 +62,7 @@ export class Chart2Component implements OnInit {
         
         console.log(this.monthData, this.month);
       }
-  
+      
     }) 
     //console.log(data.value)
     
